@@ -1,0 +1,16 @@
+{
+  "name": "challenges",
+  "version": "1.0.0",
+  "description": "## Overview `Array.forEach` allows you to iterate through an array. Where a normal `for` loop is \"iterative\", forEach is more declarative or functional in nature.",
+  "main": "challenges-01.test.js",
+  "scripts": {
+    "test-watch": "jest --watchAll",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "26.6.3"
+  }
+}
