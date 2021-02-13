@@ -1,20 +1,20 @@
 'use strict';
 
-const names = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
+var names = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
 
-const leftImage = document.getElementById('left');
-const centerImage = document.getElementById('center');
-const rightImage = document.getElementById('right');
+var leftImage = document.getElementById('left');
+var centerImage = document.getElementById('center');
+var rightImage = document.getElementById('right');
 
-let allProducts = [];
-const container = document.getElementById('image_container');
-const viewed = [];
-const labels = [];
-const pics = [leftImage, centerImage, rightImage];
-const list = document.getElementById('productlist');
-let totalClicks = 0;
-const views = [];
-const votes = [];
+var allProducts = [];
+var container = document.getElementById('image_container');
+var viewed = [];
+var labels = [];
+var pics = [leftImage, centerImage, rightImage];
+var list = document.getElementById('productlist');
+var totalClicks = 0;
+var views = [];
+var votes = [];
 
 function Product(name) {
   this.name = name;
@@ -40,8 +40,8 @@ function displayPics(){
   // PUT YOUR RESPONSE IN THIS COMMENT
   console.log(viewed);
 
-  for (let i = 0; i < 3; i++){
-    const temp = viewed.shift();
+  for (var i = 0; i < 3; i++){
+    var temp = viewed.shift();
     pics[i].src = allProducts[temp].path;
     pics[i].id = allProducts[temp].name;
     allProducts[temp].views += 1;
@@ -59,7 +59,7 @@ function handleClick(event) {
     showList();
     makeChart();
   }
-  for(let i = 0; i < names.length; i++){
+  for(var i = 0; i < names.length; i++){
     if(event.target.id === allProducts[i].name) {
       allProducts[i].votes += 1;
       console.log(event.target.id + ' has ' + allProducts[i].votes + ' votes in ' + allProducts[i].views + ' views');
@@ -71,8 +71,8 @@ function handleClick(event) {
 }
 
 function showList() {
-  for(let i = 0; i < allProducts.length; i++) {
-    const liEl = document.createElement('li');
+  for(var i = 0; i < allProducts.length; i++) {
+    var liEl = document.createElement('li');
     liEl.textContent = allProducts[i].name + ' has ' + allProducts[i].votes + ' votes in ' + allProducts[i].views + ' views';
     list.appendChild(liEl);
   }
@@ -88,7 +88,7 @@ function makeChartData(){
 
 function makeChart(){
   makeChartData();
-  const ctx = document.getElementById('chartypants').getContext('2d');
+  var ctx = document.getElementById('chartypants').getContext('2d');
   new Chart(ctx, { //eslint-disable-line
     type: 'bar',
     data: {
@@ -128,7 +128,7 @@ if(localStorage.busmall){
   allProducts = JSON.parse(localStorage.busmall);
 } else {
   console.log('There is no local storage data; initialize app by creating instances');
-  for(let i = 0; i < names.length; i++) {
+  for(var i = 0; i < names.length; i++) {
     new Product(names[i]);
   }
 }
