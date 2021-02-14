@@ -1,0 +1,21 @@
+body {
+    background: #eee;
+   font-family: sans-serif;
+}
+div {
+   background: #111;
+   color: #eee;
+   height: 300px;
+   width:20%;
+}
+
+@media (min-width:900px) {
+    body {
+        background: blue;
+    }
+
+    div {
+        float:left;
+        margin: 10px;
+    }
+}
