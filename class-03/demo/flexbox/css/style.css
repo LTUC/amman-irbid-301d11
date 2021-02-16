@@ -1,0 +1,65 @@
+* {
+  box-sizing:border-box; 
+     /* The box-sizing property allows us to include
+  the padding and border in an element's total width and height. */
+}
+
+html, body {
+  height: 100%;
+  /* to make the body take all the height of the page
+  not only the body block */
+}
+
+body > header, body > footer { /*to target the footer that is a child of the body*/
+  background:#444;
+  color: #eee;
+  height: 70px;
+  line-height:70px;
+}
+
+body {
+  display:flex;
+  flex-direction: column;
+}
+
+/* header {
+  order: 2;
+}
+
+main {
+  order:3
+}
+
+footer {
+  order:1;
+} */
+
+.card{
+  display:flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.card header {
+  order:1;
+}
+
+.card img {
+  order:2;
+}
+
+.card p {
+  order:3;
+}
+
+.card .links{
+  order:4;
+  display:flex;
+  justify-content: space-between;
+}
+
+.deck {
+  display:flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
