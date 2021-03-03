@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>hello <%=data%></p>
+    <a href="/myTodoList">My Todo List</a>
+    <form action="/addTask" method="post">
+        <input type="text" name='t_name' id="t_name" placeholder="task name">
+        <input type="date" name='t_date' id='t_date' placeholder="task date">
+        <button type="submit">Add Task</button>
+    </form>
+</body>
+</html>
